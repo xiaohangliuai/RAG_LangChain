@@ -1,0 +1,29 @@
+# LangChain Core
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+
+# Document Processing
+pypdf>=5.0.0
+
+# Text Splitting
+langchain-text-splitters>=0.3.0
+
+# Vector Store
+langchain-chroma>=0.1.0
+chromadb>=0.4.0
+
+# Embeddings - Choose one or more based on your needs:
+
+# Option 1: OpenAI (recommended, requires API key)
+langchain-openai>=0.2.0
+
+# Option 2: HuggingFace (free, runs locally)
+# langchain-huggingface>=0.1.0
+# sentence-transformers>=2.2.0
+
+# Option 3: Ollama (free, requires Ollama installed)
+# langchain-ollama>=0.1.0
+
+# Utilities
+python-dotenv>=1.0.0
+
