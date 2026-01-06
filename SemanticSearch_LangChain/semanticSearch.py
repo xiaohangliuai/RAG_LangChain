@@ -4,6 +4,10 @@ Semantic Search Engine with LangChain
 
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Fix Windows console encoding for Unicode characters
 if sys.platform == 'win32':

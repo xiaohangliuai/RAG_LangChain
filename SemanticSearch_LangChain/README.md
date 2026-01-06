@@ -32,20 +32,11 @@ import os
 os.environ['OPENAI_API_KEY'] = 'your-api-key-here'
 ```
 
-### 3. Alternative: Use Free Embeddings
+### 3. Embeddings
 
-If you don't have an OpenAI API key, you can use free alternatives:
-
-**Option A: HuggingFace (runs locally)**
 ```python
 from langchain_huggingface import HuggingFaceEmbeddings
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-```
-
-**Option B: Ollama (requires Ollama installed)**
-```python
-from langchain_ollama import OllamaEmbeddings
-embeddings = OllamaEmbeddings(model="llama2")
 ```
 
 ## Usage

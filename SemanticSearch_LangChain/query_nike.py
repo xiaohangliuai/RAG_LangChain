@@ -5,6 +5,10 @@ Load the existing vector store and perform custom searches with AI-powered answe
 
 import sys
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Fix Windows console encoding
 if sys.platform == 'win32':
@@ -51,11 +55,11 @@ except Exception as e:
 # Create a retriever
 retriever = vector_store.as_retriever(
     search_type="similarity",
-    search_kwargs={"k": 3}  # Get top 3 results
+    search_kwargs={"k": 2}  
 )
 
 # ============================================
-# SET UP RAG WITH OPENAI (if API key available)
+# SET UP RAG WITH OPENAI
 # ============================================
 use_rag = False
 llm = None
@@ -66,7 +70,6 @@ if os.environ.get("OPENAI_API_KEY"):
         
         llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
         
-        # Create RAG prompt template
         template = """You are an AI assistant helping to answer questions about Nike's 2023 10-K filing.
 Use the following context retrieved from the document to answer the question.
 If you cannot answer the question based on the context, say "I cannot find that information in the provided context."
@@ -114,9 +117,9 @@ print("\n💡 Example questions:")
 print("  - How were Nike's margins impacted in 2023?")
 print("  - How many distribution centers does Nike have in the US?")
 print("  - When was Nike incorporated?")
-print("  - What were Nike's total revenues in fiscal 2023?")
-print("  - Tell me about Nike's retail stores")
-print("  - How much did Converse revenues increase?")
+# print("  - What were Nike's total revenues in fiscal 2023?")
+# print("  - Tell me about Nike's retail stores")                               
+# print("  - How much did Converse revenues increase?")
 
 while True:
     try:
