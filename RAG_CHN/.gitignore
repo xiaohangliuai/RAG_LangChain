@@ -1,0 +1,9 @@
+
+# Environment variables
+.env
+
+# Data files (PDFs and other documents)
+data/
+
+# Vector store database
+chroma_db_VN/
